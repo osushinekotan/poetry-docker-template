@@ -9,6 +9,7 @@ ARG POETRY_VERSION=""
 
 # Set the working directory in the container to /workspace
 WORKDIR /workspace
+COPY pyproject.toml poetry.lock ./
 
 # Update and install system dependencies
 RUN apt-get update \
@@ -24,3 +25,5 @@ RUN pip install --no-cache-dir poetry==${POETRY_VERSION}
 # Configure Poetry
 RUN poetry config virtualenvs.create true \
     && poetry config virtualenvs.in-project true
+
+RUN poetry install
