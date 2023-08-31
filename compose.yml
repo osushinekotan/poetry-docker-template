@@ -9,6 +9,7 @@ services:
         POETRY_VERSION: "1.5.1"
     volumes:
       - .:/workspace
+      - /workspace/.venv
     ports:
       - 8888:8888
     tty: true
