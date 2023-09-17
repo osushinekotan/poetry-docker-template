@@ -18,9 +18,10 @@ services:
     environment: 
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=all
+      - PYTHONPATH=/workspace
     deploy:
       resources:
         reservations:
           devices:
           - driver: nvidia
-            capabilities: [gpu]
+            capabilities: [gpu]      
