@@ -1,9 +1,11 @@
-# TEMPURA 🍤
-Python Project Template 
+# POETRY DOCKER TEMPLATE 🍤
+Python Project Template Using Poetry & DevContainer
 
 ## Directory Structure
 ```
 .
+├── .devcontainer
+│   └── devcontainer.json
 ├── Dockerfile
 ├── LICENSE
 ├── README.TEMPURA.md
@@ -11,10 +13,13 @@ Python Project Template
 ├── compose.gpu.yml
 ├── compose.yml
 ├── gcp
-│   ├── change_git_admin.sh
+│   ├── chown_git.sh
 │   ├── install_docker.sh
-│   └── reinstall_nvidia_driver.sh
+│   ├── install_gscfuse.sh
+│   ├── mount_bucket.sh
+│   └── install_gpu_driver.sh
 ├── notebooks
+├── resources
 ├── poetry.lock
 ├── pyproject.toml
 ├── src
@@ -51,7 +56,7 @@ Python Project Template
 ## Features
 - Utilizes `devcontainer` as the workspace
 - Python version: `3.11` (modifiable)
-- Package manager: `poetry (1.5.1)` (Python and poetry versions can be changed)
+- Package manager: `poetry (1.6.1)` (Python and poetry versions can be changed)
 - Formatter: `black`
 - Linter and Formatter: `ruff`
 - Type checker: `mypy`
@@ -59,4 +64,4 @@ Python Project Template
 
 ## GPU (GCE)
 - If you are using a GCE instance with a GPU, set `compose.gpu.yml` as the `dockerComposeFile` in `.devcontainer/devcontainer.json`.
-- Also, consider using `gcp/change_git_admin.sh` and `reinstall_nvidia_driver.sh` as needed.
+- Also, consider using `gcp/chown_git.sh` and `install_gpu_driver.sh` as needed.
